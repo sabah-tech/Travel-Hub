@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking - Travel Hub</title>
+  <link rel="stylesheet" href="booking.css">
+  <script defer src="booking.js"></script>
+  
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="booking-navbar">
+      <div class="booking-logo">Travel Hub</div>
+      <ul class="booking-nav-links">
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="accommodations.html">Accommodations</a></li>
+        <li><a href="activities.html">Activities</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="booking_page.html">Booking</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Booking Form Section -->
+  <section class="booking-section">
+    <h1>Book Your Trip</h1>
+    <form id="bookingForm">
+      <fieldset>
+        <legend>Trip Details</legend>
+        <label for="departure-city">Departure City</label>
+        <input type="text" id="departure-city" placeholder="Enter departure city" required>
+
+        <label for="destination-city">Destination City</label>
+        <input type="text" id="destination-city" placeholder="Enter destination city" required>
+
+        <label for="departure-date">Departure Date</label>
+        <input type="date" id="departure-date" min="today"required >
+
+        <label for="return-date">Return Date</label>
+        <input type="date" id="return-date" required>
+      </fieldset>
+      <div class="form-actions">
+        <button type="button" id="searchBtn">Search</button>
+        <button type="reset">Clear</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Search Results Section -->
+  <section class="search-results" id="searchResults">
+    <h2>Search Results</h2>
+    <div id="resultsContainer"></div>
+  </section>
+
+  <!-- Hotel Listings Section -->
+  <section class="hotel-listings" id="hotelListings">
+    <h2>Available Hotels</h2>
+    <div id="hotelsContainer"></div>
+  </section>
+
+  <!-- Booking Confirmation Section -->
+  <section class="confirmation" id="confirmation" style="display: none;">
+    <h2>Booking Confirmation</h2>
+    <p id="confirmationMessage"></p>
+  </section>
+
+  <!-- Add Personal Information Form Section -->
+<!-- Updated Personal Information Section -->
+<section class="personal-info" id="personalInfo" style="display: none;">
+    <h2>Enter Passenger Details</h2>
+    <p id="optionalHotelMessage">You have not selected a hotel. You may proceed with booking only travel.</p>
+    <form id="personalInfoForm">
+      <fieldset>
+        <legend>Passenger Information</legend>
+        <label for="full-name">Full Name</label>
+        <input type="text" id="full-name" placeholder="Enter your full name" required>
+  
+        <label for="phone-number">Phone Number</label>
+        <input type="tel" id="phone-number" placeholder="Enter your phone number" required>
+  
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Enter your email address" required>
+  
+        <label for="additional-info">Additional Information</label>
+        <textarea id="additional-info" placeholder="Any additional details..."></textarea>
+      </fieldset>
+      <div class="form-actions">
+        <button type="submit" id="confirmBookingBtn">Confirm Booking</button>
+      </div>
+    </form>
+  </section>  
+  
+
+  <!-- Footer -->
+  <footer class="booking-footer">
+    <p>© 2024 Travel Hub. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
