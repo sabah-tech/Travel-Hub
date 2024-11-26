@@ -1,0 +1,31 @@
+{
+    "destinations": [
+      {
+        "city": "Paris",
+        "country": "France",
+        "ticketPrice": "$200",
+        "travelTime": "5 hours",
+        "availableDates": ["2024-11-25", "2024-12-01", "2024-12-05"],
+        "hotels": [
+          { "name": "Hotel Parisienne", "pricePerNight": "$120" },
+          { "name": "Eiffel Suites", "pricePerNight": "$150" }
+        ]
+      },
+      {
+        "city": "Tokyo",
+        "country": "Japan",
+        "ticketPrice": "$500",
+        "travelTime": "14 hours",
+        "availableDates": ["2024-11-27", "2024-12-03"],
+        "hotels": [
+          { "name": "Tokyo Inn", "pricePerNight": "$100" },
+          { "name": "Shinjuku Towers", "pricePerNight": "$180" }
+        ]
+      }
+    ]
+}
+
+
+
+
+  

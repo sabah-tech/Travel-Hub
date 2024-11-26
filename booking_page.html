@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Booking - Travel Hub</title>
   <link rel="stylesheet" href="booking.css">
-  <script defer src="booking.js"></script>
-  
+
 </head>
 <body>
   <!-- Navbar -->
@@ -34,7 +33,9 @@
         <input type="text" id="departure-city" placeholder="Enter departure city" required>
 
         <label for="destination-city">Destination City</label>
-        <input type="text" id="destination-city" placeholder="Enter destination city" required>
+        <select id="destination-city" required>
+          <option value="" disabled selected>select a destination</option>
+        </select> 
 
         <label for="departure-date">Departure Date</label>
         <input type="date" id="departure-date" min="today"required >
@@ -58,7 +59,7 @@
   <!-- Hotel Listings Section -->
   <section class="hotel-listings" id="hotelListings">
     <h2>Available Hotels</h2>
-    <div id="hotelsContainer"></div>
+    <div id="hotelsContainer" style="display: none;"></div>
   </section>
 
   <!-- Booking Confirmation Section -->
@@ -68,10 +69,11 @@
   </section>
 
   <!-- Add Personal Information Form Section -->
-<!-- Updated Personal Information Section -->
 <section class="personal-info" id="personalInfo" style="display: none;">
     <h2>Enter Passenger Details</h2>
-    <p id="optionalHotelMessage">You have not selected a hotel. You may proceed with booking only travel.</p>
+    <p id="skipHotelMessage">You have not selected a hotel. You may proceed with booking only travel.</p>
+    <p id="HotelselectedMessage">You have selected a hotel. You may proceed with booking your travel.</p>
+
     <form id="personalInfoForm">
       <fieldset>
         <legend>Passenger Information</legend>
@@ -98,6 +100,7 @@
   <footer class="booking-footer">
     <p>© 2024 Travel Hub. All rights reserved.</p>
   </footer>
-
+  <script src="jquery-3.7.1.min.js"></script>
+  <script src="booking.js"></script>
 </body>
 </html>
