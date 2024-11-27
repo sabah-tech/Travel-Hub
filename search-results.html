@@ -7,34 +7,37 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="search-result-body">
+
 <!-- Sticky Navbar -->
 <header class="sticky-header">
   <div class="navbar-container">
-    <a href="#" class="logo">
-      <img src="imgs/website-logo.png">
-    </a>
-    <button class="hamburger" aria-label="Toggle Menu">
-      <span class="line"></span>
-      <span class="line"></span>
-      <span class="line"></span>
-    </button>
-    <ul class="navbar">
-      <li><a href="homepage.html">Home</a></li>
-      <li><a href="#">Destinations</a></li>
-      <li><a href="#">Travel Guide</a></li>
-      <li><a href="accommodation.html">Accommodation</a></li>
-      <li><a href="#">Activities</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
+      <a href="homepage.html" class="logo">
+          <img src="imgs/website-logo.PNG" alt="Website Logo">
+      </a>
+      <button class="hamburger" aria-label="Toggle Menu" onclick="toggleMenu()">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+      </button>
+      <ul class="navbar">
+          <li><a href="homepage.html">Home</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="tips.html">Travel Guide</a></li>
+          <li><a href="accommodation.html">Accommodation</a></li>
+          <li><a href="booking_page.html">Book Now</a></li>
+      </ul>
   </div>
 </header>
 
   <!-- Search Results Section -->
+
   <section class="search-results">
     <h1>Search Results</h1>
     <p id="results-message">Here are the results for your search:</p>
 
     <!-- Filters and Sorting -->
+
     <div class="filter-sort">
       <label for="category-filter">Category:</label>
       <select id="category-filter">
@@ -54,13 +57,13 @@
     </div>
 
     <!-- Results List -->
+
     <ul id="results-list">
-      <!-- Placeholder content to be dynamically filtered and sorted -->
       <li data-category="beaches" data-rating="4.5" data-price="300">
-        <a href="destination1.html">Relax at Maldives: Pristine Beaches</a> - $300 | 4.5⭐
+        <a href=".html">Relax at Maldives: Pristine Beaches</a> - $300 | 4.5⭐
       </li>
       <li data-category="adventures" data-rating="4.7" data-price="250">
-        <a href="destination2.html">Hike the Alps: Adventure Awaits</a> - $250 | 4.7⭐
+        <a href=".html">Hike the Alps: Adventure Awaits</a> - $250 | 4.7⭐
       </li>
       <li data-category="cities" data-rating="4.2" data-price="400">
         <a href="destination3.html">Discover Tokyo: A Modern Wonderland</a> - $400 | 4.2⭐
@@ -72,22 +75,23 @@
 
     <p id="no-results" class="hidden">No results found for your filters.</p>
   </section>
+  
+  <footer id="footer">
+    <p>&copy; 2024 Travel Hub. All rights reserved.</p>
+</footer>
 
 
 <script>
-  // Get query parameter from the URL
-  const urlParams = new URLSearchParams(window.location.search);
-  const searchQuery = urlParams.get('q');
+  let urlParams = new URLSearchParams(window.location.search);
+  let searchQuery = urlParams.get('q');
 
-  // Update the results message dynamically
-  const resultsMessage = document.getElementById('results-message');
-  const resultsList = document.getElementById('results-list');
-  const noResultsMessage = document.getElementById('no-results');
+  let resultsMessage = document.getElementById('results-message');
+  let resultsList = document.getElementById('results-list');
+  let noResultsMessage = document.getElementById('no-results');
 
   if (searchQuery) {
     resultsMessage.textContent = `Here are the results for your search: "${searchQuery}"`;
 
-    // Simulate no results if the query is "unknown" or blank (example logic)
     if (searchQuery.toLowerCase() === "unknown") {
       resultsList.style.display = "none";
       noResultsMessage.classList.remove('hidden');
@@ -95,19 +99,17 @@
   } else {
     resultsMessage.textContent = "No search term provided. Redirecting...";
     setTimeout(() => {
-      window.location.href = "index.html"; // Redirect back to the home page
+      window.location.href = "homepage.html"; 
     }, 3000);
   }
 
 
-  // Advanced Features: Filters, Sorting, and Categories
 document.addEventListener('DOMContentLoaded', () => {
   const categoryFilter = document.getElementById('category-filter');
   const sortBy = document.getElementById('sort-by');
   const resultsList = document.getElementById('results-list');
   const noResultsMessage = document.getElementById('no-results');
 
-  // Event listener for filters
   categoryFilter.addEventListener('change', filterResults);
   sortBy.addEventListener('change', sortResults);
 
@@ -150,5 +152,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+function toggleMenu() {
+  const navbar = document.querySelector(".navbar");
+  const hamburger = document.querySelector(".hamburger");
+  navbar.classList.toggle("open");
+  hamburger.classList.toggle("active");
+}
 </script>
 </html>

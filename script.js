@@ -1,13 +1,11 @@
 
-  document.addEventListener("DOMContentLoaded", () => {
-   let hamburger = document.querySelector(".hamburger");
-   let navbar = document.querySelector(".navbar");
+function toggleMenu() {
+  const navbar = document.querySelector(".navbar");
+  const hamburger = document.querySelector(".hamburger");
+  navbar.classList.toggle("open");
+  hamburger.classList.toggle("active");
+}
 
-    hamburger.addEventListener("click", () => {
-      hamburger.classList.toggle("active");
-      navbar.classList.toggle("open");
-    });
-  });
   
   document.getElementById('search-btn').addEventListener('click', function () {
     let searchInput = document.getElementById('search-input').value.trim();

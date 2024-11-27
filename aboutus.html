@@ -10,22 +10,22 @@
 <!-- Sticky Navbar -->
 <header class="sticky-header">
   <div class="navbar-container">
-    <a href="#" class="logo">
-      <img src="imgs/website-logo.png">
-    </a>
-    <button class="hamburger" aria-label="Toggle Menu">
-      <span class="line"></span>
-      <span class="line"></span>
-      <span class="line"></span>
-    </button>
-    <ul class="navbar">
-      <li><a href="homepage.html">Home</a></li>
-      <li><a href="destinations.html">Destinations</a></li>
-      <li><a href="#">Travel Guide</a></li>
-      <li><a href="accommodation.html">Accommodation</a></li>
-      <li><a href="booking_page.html">Book Now</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
+      <a href="homepage.html" class="logo">
+          <img src="imgs/website-logo.PNG" alt="Website Logo">
+      </a>
+      <button class="hamburger" aria-label="Toggle Menu" onclick="toggleMenu()">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+      </button>
+      <ul class="navbar">
+          <li><a href="homepage.html">Home</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="tips.html">Travel Guide</a></li>
+          <li><a href="accommodation.html">Accommodation</a></li>
+          <li><a href="booking_page.html">Book Now</a></li>
+      </ul>
   </div>
 </header>
     <!-- About Us Section -->
@@ -34,8 +34,7 @@
   <img class="aboutus-logo" src="imgs/website-logo.PNG">
   <p>
     Welcome to Travel Gateway, your trusted partner in exploring the world. 
-    Our mission is to help you plan unforgettable journeys with ease, providing 
-    personalized recommendations and expert tips. Start your adventure with us today!
+    Start your adventure with us today!
   </p>
 </section>
   <!-- Mission and Vision -->
@@ -128,4 +127,14 @@
     <p>Address: 123 Travel Street, Wanderlust City, World</p>
   </section>
 </body>
+<footer id="footer">
+  <p>&copy; 2024 Travel Hub. All rights reserved.</p>
+</footer>
+<script>
+function toggleMenu() {
+  const navbar = document.querySelector(".navbar");
+  const hamburger = document.querySelector(".hamburger");
+  navbar.classList.toggle("open");
+  hamburger.classList.toggle("active");
+}</script>
 </html>
