@@ -1,3 +1,9 @@
+function toggleMenu() {
+  let navbar = document.querySelector(".navbar");
+  let hamburger = document.querySelector(".hamburger");
+  navbar.classList.toggle("open");
+  hamburger.classList.toggle("active");
+}
 let prev = document.querySelector("#prev");
 let next = document.querySelector("#next");
 
