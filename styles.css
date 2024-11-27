@@ -6,6 +6,8 @@ body {
     background-color: #f4f4f4;
     color: #333;
   }
+
+  /* Navbar */
   header {
     position: sticky;
     top: 0;
@@ -31,7 +33,6 @@ body {
     width: auto;
 }
 
-/* Navbar */
 .navbar {
     display: flex;
     list-style: none;

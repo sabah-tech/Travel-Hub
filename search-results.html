@@ -105,21 +105,21 @@
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const categoryFilter = document.getElementById('category-filter');
-  const sortBy = document.getElementById('sort-by');
-  const resultsList = document.getElementById('results-list');
-  const noResultsMessage = document.getElementById('no-results');
+  let categoryFilter = document.getElementById('category-filter');
+  let sortBy = document.getElementById('sort-by');
+  let resultsList = document.getElementById('results-list');
+  let noResultsMessage = document.getElementById('no-results');
 
   categoryFilter.addEventListener('change', filterResults);
   sortBy.addEventListener('change', sortResults);
 
   function filterResults() {
-    const category = categoryFilter.value;
-    const results = resultsList.querySelectorAll('li');
+    let category = categoryFilter.value;
+    let results = resultsList.querySelectorAll('li');
     let hasResults = false;
 
     results.forEach(result => {
-      const resultCategory = result.dataset.category;
+      let resultCategory = result.dataset.category;
 
       if (category === 'all' || resultCategory === category) {
         result.style.display = '';
@@ -133,8 +133,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function sortResults() {
-    const sortValue = sortBy.value;
-    const results = Array.from(resultsList.querySelectorAll('li'));
+    let sortValue = sortBy.value;
+    let results = Array.from(resultsList.querySelectorAll('li'));
 
     results.sort((a, b) => {
       if (sortValue === 'popularity') {
@@ -153,8 +153,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function toggleMenu() {
-  const navbar = document.querySelector(".navbar");
-  const hamburger = document.querySelector(".hamburger");
+  let navbar = document.querySelector(".navbar");
+  let hamburger = document.querySelector(".hamburger");
   navbar.classList.toggle("open");
   hamburger.classList.toggle("active");
 }

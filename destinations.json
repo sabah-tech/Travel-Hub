@@ -3,12 +3,12 @@
       {
         "city": "Paris",
         "country": "France",
-        "ticketPrice": "$200",
+        "ticketPrice": "$300",
         "travelTime": "5 hours",
         "availableDates": ["2024-11-25", "2024-12-01", "2024-12-05"],
         "hotels": [
-          { "name": "Hotel Parisienne", "pricePerNight": "$120" },
-          { "name": "Eiffel Suites", "pricePerNight": "$150" }
+          { "name": "Le Meridien", "pricePerNight": "$250" },
+          { "name": "Eiffel Suites Hotel", "pricePerNight": "$200" }
         ]
       },
       {
@@ -18,8 +18,52 @@
         "travelTime": "14 hours",
         "availableDates": ["2024-11-27", "2024-12-03"],
         "hotels": [
-          { "name": "Tokyo Inn", "pricePerNight": "$100" },
-          { "name": "Shinjuku Towers", "pricePerNight": "$180" }
+          { "name": "Tokyo Tower Inn", "pricePerNight": "$180" },
+          { "name": "Shibuya Hotel", "pricePerNight": "$150" }
+        ]
+      },
+      {
+        "city": "Rio",
+        "country": "Brazil",
+        "ticketPrice": "$550",
+        "travelTime": "17 hours",
+        "availableDates": ["2024-11-30", "2024-12-07"],
+        "hotels": [
+          { "name": "Copacabana Beach", "pricePerNight": "$100" },
+          { "name": "Rio Palace", "pricePerNight": "$120" }
+        ]
+      },
+      {
+        "city": "Venice",
+        "country": "Italy",
+        "ticketPrice": "$790",
+        "travelTime": "7 hours",
+        "availableDates": ["2024-11-29", "2024-12-10", "2024-12-11"],
+        "hotels": [
+          { "name": "Hotel Danieli", "pricePerNight": "$300" },
+          { "name": "Palazzo Venier", "pricePerNight": "$350" }
+        ]
+      },
+      {
+        "city": "Bangkok",
+        "country": "Thailand",
+        "ticketPrice": "$670",
+        "travelTime": "6 hours",
+        "availableDates": ["2024-12-11", "2024-12-17", "2024-12-29"],
+        "hotels": [
+          { "name": "Khao San Road Inn", "pricePerNight": "$50" },
+          { "name": "Bangkok City Hotel", "pricePerNight": "$70" }
+        ]
+      },
+      {
+        "city": "Sydney",
+        "country": "Australia",
+        "ticketPrice": "$400",
+        "travelTime": "19 hours",
+        "availableDates": ["2024-12-12", "2024-12-14", "2024-12-27"],
+        "hotels": [
+          { "name": "Sydney Harbour Hotel", "pricePerNight": "$220" },
+          { "name": "Bondi Beach Resort", "pricePerNight": "$180" }
         ]
       }
     ]

@@ -1,91 +1,87 @@
 
 function toggleMenu() {
-  const navbar = document.querySelector(".navbar");
-  const hamburger = document.querySelector(".hamburger");
+  let navbar = document.querySelector(".navbar");
+  let hamburger = document.querySelector(".hamburger");
   navbar.classList.toggle("open");
   hamburger.classList.toggle("active");
 }
 
   
-  document.getElementById('search-btn').addEventListener('click', function () {
-    let searchInput = document.getElementById('search-input').value.trim();
-    let searchMessage = document.getElementById('search-message');
-    if (searchInput) {
-      searchMessage.textContent = `Searching for "${searchInput}"... Happy exploring!`;
-      searchMessage.classList.remove('hidden');
-      searchMessage.style.color = "#28a745";
+$('#search-btn').on('click', function () {
+  let searchInput = $('#search-input').val().trim();
+  let searchMessage = $('#search-message');
+  if (searchInput) {
+      searchMessage.text(`Searching for "${searchInput}"... Happy exploring!`)
+          .removeClass('hidden')
+          .css('color', '#28a745');
       setTimeout(() => {
-        window.location.href = `search-results.html?q=${encodeURIComponent(searchInput)}`;
-      }, 2000); 
-    } else {
-      searchMessage.textContent = "Please enter a search term to proceed.";
-      searchMessage.classList.remove('hidden');
-      searchMessage.style.color = "#dc3545";
-    }
-  });
+          window.location.href = `search-results.html?q=${encodeURIComponent(searchInput)}`;
+      }, 2000);
+  } else {
+      searchMessage.text("Please enter a search term to proceed.")
+          .removeClass('hidden')
+          .css('color', '#dc3545');
+  }
+});
 
 
+$(document).ready(function () {
+  let $carousel = $('.carousel');
+  let $slides = $('.carousel-slide');
+  let totalSlides = $slides.length;
+  let currentIndex = 0;
 
-  document.addEventListener("DOMContentLoaded", () => {
-    let carousel = document.querySelector('.carousel');
-    let slides = document.querySelectorAll('.carousel-slide');
-    let totalSlides = slides.length;
-    let currentIndex = 0;
-  
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % totalSlides; 
+  function nextSlide() {
+      currentIndex = (currentIndex + 1) % totalSlides;
       updateCarouselPosition();
-    }
-  
-    function updateCarouselPosition() {
-      let offset = -100 * currentIndex; 
-      carousel.style.transform = `translateX(${offset}%)`;
+  }
+
+  function updateCarouselPosition() {
+      let offset = -100 * currentIndex;
+      $carousel.css('transform', `translateX(${offset}%)`);
       updateDots();
-    }
-  
-    let dotsContainer = document.createElement('div');
-    dotsContainer.classList.add('carousel-dots');
-    slides.forEach((_, index) => {
-      const dot = document.createElement('span');
-      dot.addEventListener('click', () => goToSlide(index));
-      dotsContainer.appendChild(dot);
-    });
-    carousel.parentElement.appendChild(dotsContainer);
-  
-    function updateDots() {
-      let dots = dotsContainer.querySelectorAll('span');
-      dots.forEach((dot, index) => {
-        if (index === currentIndex) {
-          dot.classList.add('active');
-        } else {
-          dot.classList.remove('active');
-        }
+  }
+
+  let $dotsContainer = $('<div>', { class: 'carousel-dots' });
+  $slides.each(function (index) {
+      let $dot = $('<span>');
+      $dot.on('click', function () {
+          goToSlide(index);
       });
-    }
-  
-    function goToSlide(index) {
+      $dotsContainer.append($dot);
+  });
+  $carousel.parent().append($dotsContainer);
+
+  function updateDots() {
+      $dotsContainer.children('span').each(function (index) {
+          $(this).toggleClass('active', index === currentIndex);
+      });
+  }
+
+  function goToSlide(index) {
       currentIndex = index;
       updateCarouselPosition();
-    }
-  
-    setInterval(nextSlide, 5000); 
-  
-    updateCarouselPosition();
-  });
+  }
+
+  setInterval(nextSlide, 5000);
+
+  updateCarouselPosition();
+});
+
   //footer subscription form
   $(document).ready(function () {
     $("#newsletterForm").on("submit", function (event) {
       event.preventDefault();
   
-      const email = $("#newsletterEmail").val();
-      const $message = $("#newsletterMessage");
+      let email = $("#newsletterEmail").val();
+      let $message = $("#newsletterMessage");
   
       if (email) {
         $message.text("Thank you for subscribing!")
                 .css("color", "green"); 
         $("#newsletterEmail").val(''); 
       } else {
-        $message.text("Please enter a valid email address.")
+        $message.text("Please enter a valid email address. It should consist of @")
                 .css("color", "red");
       }
     });
