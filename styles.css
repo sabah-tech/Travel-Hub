@@ -218,18 +218,24 @@ body {
   
   /*HomePage*/
   .hero {
-    background: url('imgs/') no-repeat center center/cover;
-    text-align: center;
+    background: url('imgs/hero2.jpg') no-repeat center center/cover;
+    text-align:center;
     padding: 100px 20px;
+  }
+  .hero-content{
+    background-color: rgba(242, 244, 246, 0.4);
+    padding: 20px;
   }
 
   .hero-content h1 {
     font-size: 3rem;
     color: #3494e8;
+    margin-bottom: 100px;
   }
   
   .search-bar {
     margin-top: 20px;
+    padding-bottom: 40px;
   }
   
   .search-bar input {
@@ -277,19 +283,25 @@ body {
   .hidden {
     display: none;
   }
+
 .featured-destinations {
   padding: 40px 20px;
   background-color: #f0f0f0;
   text-align: center;
   align-items: center;
+  justify-content: center;
+  display: flex;
 }
-
-
 .destination-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
-  overflow: hidden;}
+  width:100%;
+  max-width: 1200px;
+  margin: 0 auto; 
+  overflow: hidden;
+  align-items: stretch;
+}
 
 .destination-card {
   position: relative;
@@ -301,11 +313,12 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: 100%;
 }
 
 .destination-card img {
   width: 100%;
-  height: 100%;
+  height: 200px;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
@@ -458,10 +471,11 @@ body {
   }
   
   
-.quick-links {
-    background-color:#f0f8ff;
-    padding: 40px 20px;
+  .quick-links {
+    background-color: #f0f8ff;
+    padding: 40px 40px;
     text-align: center;
+    justify-items: center;
   }
   
   .quick-links h2 {
@@ -469,14 +483,15 @@ body {
     margin-bottom: 30px;
     font-weight: bold;
     color: #457fd5;
- 
   }
   
   .quick-links-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 60px;
-    justify-items: center;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(2, 1fr); 
+    gap: 40px; 
+    justify-content: center; 
+    align-items: start; 
   }
   
   .quick-link-item {
@@ -488,6 +503,7 @@ body {
     text-align: center;
     width: 100%;
     max-width: 300px;
+    height: 190px;
   }
   
   .quick-link-item i {
@@ -531,6 +547,22 @@ body {
     display: inline-block;
     margin-top: 10px;
   }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .quick-links-grid {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 20px;
+    justify-items: center;  }
+  }
+  
+  @media (max-width: 480px) {
+    .quick-links-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+  
   
   
   .testimonials {
