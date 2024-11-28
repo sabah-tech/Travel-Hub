@@ -1,0 +1,250 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url(travel.jpg);
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background: #3494e8;
+  z-index: 1000;
+}
+.txt{
+  color: white;
+  margin-left: 230px;
+  font-size: 40px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
+}
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo img {
+  height: 90px;
+  width: auto;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  margin: 0 15px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #ffcc00;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  background: white;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: #3494e8;
+      flex-direction: column;
+      width: 100%;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out;
+  }
+
+  .navbar.open {
+      max-height: 300px;
+  }
+
+  .navbar li {
+      text-align: center;
+      margin: 10px 0;
+  }
+
+  .hamburger {
+      display: flex;
+  }
+
+  .hamburger.active .line:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .line:nth-child(2) {
+      opacity: 0;
+  }
+
+  .hamburger.active .line:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+/* Hero Section */
+.hero {
+  padding: 50px, 20px;
+  text-align: center;
+  color:#3494e8;
+  background-color:rgba(255, 255, 255, 0.5);
+  
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Tips Section */
+.tips-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 50px 20px;
+}
+
+.tip-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.4s ease;
+}
+
+.tip-card:hover {
+  transform: translateY(-10px);
+}
+
+.tip-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.tip-card p {
+  font-size: 1rem;
+}
+
+/* Resource Cards */
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 50px 30px;
+}
+
+.resource-card {
+  position: relative;
+  height: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.card-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; 
+  padding: 10px;
+}
+
+.card-front {
+  background: #fff;
+}
+
+.card-img {
+  width: auto;
+  margin-left:70px ;
+  border-radius: 8px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding-top: 20px;
+}
+
+.card-back {
+  background:#1a4696;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.card-back p {
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* Optional: Smooth transition for opacity */
+.card-back {
+  opacity: 0; 
+  transition: opacity 0.5s ease-in-out; 
+}
+
+/* On hover, make the back visible */
+.resource-card:hover .card-back {
+  opacity: 1; 
+}
+
+footer {
+  background:#3494e8;;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
