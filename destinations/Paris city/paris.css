@@ -6,112 +6,121 @@
   padding: 0;
   box-sizing: border-box;
 }
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background: #3494e8;
+  z-index: 1000;
+  width: 100%;
+}
 
+
+/* Navbar */
 header {
-    position: sticky;
-    top: 0;
-    background: #3494e8;
-    z-index: 1000;
-    opacity:0.5;
+  position: sticky;
+  top: 0;
+  background: #3494e8;
+  z-index: 1000;
 }
 .txt{
-    color: white;
-    margin-left: 230px;
-    font-size: 40px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
+  color: white;
+  margin-left: 230px;
+  font-size: 40px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
 }
 .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
 }
 
 .logo img {
-    height: 90px;
-    width: auto;
+  height: 90px;
+  width: auto;
 }
 
 /* Navbar */
 .navbar {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar li {
-    margin: 0 15px;
+  margin: 0 15px;
 }
 
 .navbar a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    transition: color 0.3s;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
 .navbar a:hover {
-    color: #ffcc00;
+  color: #ffcc00;
 }
 
 /* Hamburger Menu */
 .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .hamburger .line {
-    width: 25px;
-    height: 3px;
-    background: white;
-    transition: transform 0.3s, opacity 0.3s;
+  width: 25px;
+  height: 3px;
+  background: white;
+  transition: transform 0.3s, opacity 0.3s;
 }
 
 /* Responsive Navbar */
 @media (max-width: 768px) {
-    .navbar {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background: #3494e8;
-        flex-direction: column;
-        width: 100%;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-in-out;
-    }
+  .navbar {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: #3494e8;
+      flex-direction: column;
+      width: 100%;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out;
+  }
 
-    .navbar.open {
-        max-height: 300px;
-    }
+  .navbar.open {
+      max-height: 300px;
+  }
 
-    .navbar li {
-        text-align: center;
-        margin: 10px 0;
-    }
+  .navbar li {
+      text-align: center;
+      margin: 10px 0;
+  }
 
-    .hamburger {
-        display: flex;
-    }
+  .hamburger {
+      display: flex;
+  }
 
-    .hamburger.active .line:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
+  .hamburger.active .line:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+  }
 
-    .hamburger.active .line:nth-child(2) {
-        opacity: 0;
-    }
+  .hamburger.active .line:nth-child(2) {
+      opacity: 0;
+  }
 
-    .hamburger.active .line:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
+  .hamburger.active .line:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+  }
 }
+
 
 body {
   min-height: 100vh;
@@ -122,7 +131,7 @@ body {
 }
 
 /* Hero Section (Unchanged) */
-#Sydney-hero-section {
+#paris-hero-section {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -133,7 +142,7 @@ body {
   color: #fff;
 }
 
-#Sydney-hero-video {
+#paris-hero-video {
   position: absolute;
   top: 0;
   left: 0;
@@ -143,7 +152,7 @@ body {
   z-index: -1;
 }
 
-#Sydney-hero-content {
+#paris-hero-content {
   text-align: center;
   z-index: 1;
   color: white;
@@ -151,33 +160,33 @@ body {
   padding: 0 1rem; 
 }
 
-.Sydney-hero-title {
+.paris-hero-title {
   font-family: Broadway;
   font-size: 3.5rem;
   margin-bottom: 0.5rem;
 }
 
-.Sydney-hero-subtitle {
+.paris-hero-subtitle {
   font-size: 1.5rem;
   font-weight: 300;
 }
 
 @media (max-width: 768px) {
-  .Sydney-hero-title {
+  .paris-hero-title {
     font-size: 2.5rem; 
   }
 
-  .Sydney-hero-subtitle {
+  .paris-hero-subtitle {
     font-size: 1.2rem;
   }
 
-  #Sydney-hero-content {
+  #paris-hero-content {
     padding: 0 2rem; 
   }
 }
 
 /* Welcome Section */
-#Sydney-intro-section {
+#paris-intro-section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -187,12 +196,12 @@ body {
     background-color: #f5f5f5; 
 }
 
-#Sydney-intro-content {
+#paris-intro-content {
     max-width: 900px; 
     margin: auto;
 }
 
-.Sydney-intro-title {
+.paris-intro-title {
     font-size: 3.5rem;
     font-weight: bold;
     color: #333;
@@ -200,7 +209,7 @@ body {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.Sydney-intro-text {
+.paris-intro-text {
     font-size: 1.2rem;
     line-height: 1.6;
     color: #666;
@@ -422,7 +431,7 @@ section.destinations {
 }
 
 .cCarousel-item .infos p {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: #555;
   margin-top: 10px;
 }
@@ -447,7 +456,7 @@ section.destinations {
 
 
 /* Food Section Layout */
-#Sydney-food-section {
+#paris-food-section {
     display: flex;
     flex-direction: column; 
     align-items: center; 
@@ -457,7 +466,7 @@ section.destinations {
     background-color: #f9f9f9; 
 }
 
-#Sydney-food-section .card-container {
+#paris-food-section .card-container {
     display: flex; 
     flex-wrap: wrap; 
     flex-direction: row;
@@ -467,7 +476,7 @@ section.destinations {
     max-width: 1200px; 
 }
 
-#Sydney-food-section .card-hover {
+#paris-food-section .card-hover {
     width: 360px; 
     height: 500px; 
     position: relative;
@@ -475,7 +484,7 @@ section.destinations {
     box-shadow: 0 0 32px -10px rgba(0, 0, 0, 0.08);
 }
 
-#Sydney-food-section .card-hover img {
+#paris-food-section .card-hover img {
     position: absolute;
     top: 0;
     left: 0;
@@ -528,23 +537,23 @@ section.destinations {
     clip-path: ellipse(60% 80px at bottom center);
   }
   
-#Sydney-food-section .card-hover__title {
+#paris-food-section .card-hover__title {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: #fff;
 }
 
-#Sydney-food-section .card-hover__title span {
+#paris-food-section .card-hover__title span {
     color: #00e1ff;
 }
 
-#Sydney-food-section .card-hover__text {
+#paris-food-section .card-hover__text {
     font-size: 1rem;
     color: #fff;
 }
 
 @media (max-width: 768px) {
-    #Sydney-food-section .card-container {
+    #paris-food-section .card-container {
         flex-direction: column; 
         align-items: center; 
     }

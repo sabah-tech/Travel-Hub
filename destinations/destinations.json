@@ -5,7 +5,7 @@
         "region": "europe",
         "type": "luxury",
         "image": "destinations-imgs/paris.jpg",
-        "link": "homepage.html",
+        "link": "Paris city/paris.html",
         "hotels": [
           {
             "name": "Hotel Eiffel",
@@ -22,7 +22,7 @@
         "region": "asia",
         "type": "adventure",
         "image": "destinations-imgs/tokyo.jpg",
-        "link": "homepage.html",
+        "link": "Tokyo city/tokyo.html",
         "hotels": [
           {
             "name": "Shibuya Hotel",
@@ -39,7 +39,7 @@
         "region": "south-america",
         "type": "budget",
         "image": "destinations-imgs/rio.jpg",
-        "link": "homepage.html",
+        "link": "Rio city/Rio.html",
         "hotels": [
           {
             "name": "Copacabana Beach Hotel",
@@ -56,7 +56,7 @@
         "region": "europe",
         "type": "luxury",
         "image": "destinations-imgs/venice.jpg",
-        "link": "homepage.html",
+        "link": "Venice city/venice.html",
         "hotels": [
           {
             "name": "Hotel Danieli",
@@ -73,7 +73,7 @@
         "region": "asia",
         "type": "budget",
         "image": "destinations-imgs/bangkok.jpg",
-        "link": "homepage.html",
+        "link": "Bagkok city/bagkok.html",
         "hotels": [
           {
             "name": "Khao San Road Inn",
@@ -90,7 +90,7 @@
         "region": "australia",
         "type": "adventure",
         "image": "destinations-imgs/sydney.jpg",
-        "link": "homepage.html",
+        "link": "Sydney city/sydney.html",
         "hotels": [
           {
             "name": "Sydney Harbour Hotel",

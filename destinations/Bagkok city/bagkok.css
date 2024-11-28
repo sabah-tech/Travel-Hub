@@ -6,48 +6,51 @@
   padding: 0;
   box-sizing: border-box;
 }
-.sticky-header {
-  position: sticky;
-  top: 0;
-  background: #3494e8;
-  z-index: 1000;
-  width: 100%;
-  opacity:0.5;
+header {
+    position: sticky;
+    top: 0;
+    background: #3494e8;
+    z-index: 1000;
+
+  
 }
-
-
+.txt{
+    color: white;
+    margin-left: 230px;
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
 .navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
 }
 
-.logo img{
-  height: 90px;
-  width: auto; 
-  display: block;
+.logo img {
+    height: 90px;
+    width: auto;
 }
 
 .navbar {
   display: flex;
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
-
 
 .navbar li {
   margin: 0 15px;
 }
 
-
 .navbar a {
   text-decoration: none;
-  color: #fff;
+  color: white;
   font-weight: bold;
   transition: color 0.3s;
 }
+
 .navbar a:hover {
   color: #ffcc00;
 }
@@ -60,55 +63,53 @@
   background: none;
   border: none;
   cursor: pointer;
-  z-index: 1100;
 }
 
 .hamburger .line {
   width: 25px;
   height: 3px;
-  background: #fff;
+  background: white;
   transition: transform 0.3s, opacity 0.3s;
 }
 
+/* Responsive Navbar */
 @media (max-width: 768px) {
   .navbar {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: #3494e8;
-    flex-direction: column;
-    width: 100%;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
-  }
-  .logo img {
-    height: 60px; /* Reduce size for smaller screens */
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: #3494e8;
+      flex-direction: column;
+      width: 100%;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out;
   }
 
   .navbar.open {
-    max-height: 300px; /* Adjust based on the number of links */
+      max-height: 300px;
   }
+
   .navbar li {
-    text-align: center;
-    margin: 10px 0;
+      text-align: center;
+      margin: 10px 0;
   }
 
   .hamburger {
-    display: flex;
+      display: flex;
   }
 
   .hamburger.active .line:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
+      transform: translateY(8px) rotate(45deg);
   }
 
   .hamburger.active .line:nth-child(2) {
-    opacity: 0;
+      opacity: 0;
   }
 
   .hamburger.active .line:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
+      transform: translateY(-8px) rotate(-45deg);
+  }
 }
 
 
@@ -121,7 +122,7 @@ body {
 }
 
 /* Hero Section (Unchanged) */
-#paris-hero-section {
+#Bangkok-hero-section {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -132,7 +133,7 @@ body {
   color: #fff;
 }
 
-#paris-hero-video {
+#Bangkok-hero-video {
   position: absolute;
   top: 0;
   left: 0;
@@ -142,7 +143,7 @@ body {
   z-index: -1;
 }
 
-#paris-hero-content {
+#Bangkok-hero-content {
   text-align: center;
   z-index: 1;
   color: white;
@@ -150,33 +151,33 @@ body {
   padding: 0 1rem; 
 }
 
-.paris-hero-title {
+.Bangkok-hero-title {
   font-family: Broadway;
   font-size: 3.5rem;
   margin-bottom: 0.5rem;
 }
 
-.paris-hero-subtitle {
+.Bangkok-hero-subtitle {
   font-size: 1.5rem;
   font-weight: 300;
 }
 
 @media (max-width: 768px) {
-  .paris-hero-title {
+  .Bangkok-hero-title {
     font-size: 2.5rem; 
   }
 
-  .paris-hero-subtitle {
+  .Bangkok-hero-subtitle {
     font-size: 1.2rem;
   }
 
-  #paris-hero-content {
+  #Bangkok-hero-content {
     padding: 0 2rem; 
   }
 }
 
 /* Welcome Section */
-#paris-intro-section {
+#Bangkok-intro-section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -186,12 +187,12 @@ body {
     background-color: #f5f5f5; 
 }
 
-#paris-intro-content {
+#Bangkok-intro-content {
     max-width: 900px; 
     margin: auto;
 }
 
-.paris-intro-title {
+.Bangkok-intro-title {
     font-size: 3.5rem;
     font-weight: bold;
     color: #333;
@@ -199,7 +200,7 @@ body {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.paris-intro-text {
+.Bangkok-intro-text {
     font-size: 1.2rem;
     line-height: 1.6;
     color: #666;
@@ -446,7 +447,7 @@ section.destinations {
 
 
 /* Food Section Layout */
-#paris-food-section {
+#Bangkok-food-section {
     display: flex;
     flex-direction: column; 
     align-items: center; 
@@ -456,7 +457,7 @@ section.destinations {
     background-color: #f9f9f9; 
 }
 
-#paris-food-section .card-container {
+#Bangkok-food-section .card-container {
     display: flex; 
     flex-wrap: wrap; 
     flex-direction: row;
@@ -466,7 +467,7 @@ section.destinations {
     max-width: 1200px; 
 }
 
-#paris-food-section .card-hover {
+#Bangkok-food-section .card-hover {
     width: 360px; 
     height: 500px; 
     position: relative;
@@ -474,7 +475,7 @@ section.destinations {
     box-shadow: 0 0 32px -10px rgba(0, 0, 0, 0.08);
 }
 
-#paris-food-section .card-hover img {
+#Bangkok-food-section .card-hover img {
     position: absolute;
     top: 0;
     left: 0;
@@ -527,23 +528,23 @@ section.destinations {
     clip-path: ellipse(60% 80px at bottom center);
   }
   
-#paris-food-section .card-hover__title {
+#Bangkok-food-section .card-hover__title {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: #fff;
 }
 
-#paris-food-section .card-hover__title span {
+#Bangkok-food-section .card-hover__title span {
     color: #00e1ff;
 }
 
-#paris-food-section .card-hover__text {
+#Bangkok-food-section .card-hover__text {
     font-size: 1rem;
     color: #fff;
 }
 
 @media (max-width: 768px) {
-    #paris-food-section .card-container {
+    #Bangkok-food-section .card-container {
         flex-direction: column; 
         align-items: center; 
     }
