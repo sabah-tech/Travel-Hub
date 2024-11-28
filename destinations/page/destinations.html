@@ -34,7 +34,7 @@
     <main>
         <!-- Filters Section -->
          <section id="filters">
-            <h2>find your destination</h2>
+            <h2>Find your destination</h2>
             <div class="filter-container">
 
         <form id="filter-form">
@@ -42,7 +42,7 @@
                 <span>
                     travel-type:
                 </span>
-            <input type="text" id="search" placeholder="Search Destinations">
+            
             <select id="travel-type">
                 <option value="">All Types</option>
                 <option value="luxury">Luxury</option>
@@ -61,6 +61,7 @@
                 <option value="south-america">South America</option>
                 <option value="australia">Australia</option>
             </select>
+            <input type="text" id="search" placeholder="Search Destinations">
         </label>
      
         </form>
@@ -83,13 +84,64 @@
         </section>
       
         <div id="book-now">
-            <a href="book.html">
+            <a href="Hotel booking/book.html">
                 <button class="book-btn">Book Hotel Now</button>
               </a>
-        </div>
-        
-      
+              <a href="booking_page.html"><button class="book-btn">Book your full trip </button>
+              </a>
+        </div> 
     </main>
+    <footer class="footer-section">
+        <div class="footer-nav">
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="aboutus.html">Our Story</a></li>
+                    <li><a href="aboutus.html">Meet the Team</a></li>
+                    <li><a href="aboutus.html">Our Vision</a></li>
+                    <li><a href="aboutus.html">Contact Us</a></li>
+                </ul>
+            </div>
+     
+            <div class="footer-column">
+                <h3>Destinations</h3>
+                <ul>
+                    <li><a href="destinations.html">Europe</a></li>
+                    <li><a href="destinations.html">Asia</a></li>
+                    <li><a href="destinations.html">America</a></li>
+                    <li><a href="destinations.html">Oceania</a></li>
+                </ul>
+            </div>
+     
+            <div class="footer-column">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="tips.html">Travel Tips</a></li>
+                    <li><a href="tips.html">Visa Information</a></li>
+                    <li><a href="tips.html">Packing Lists</a></li>
+                    <li><a href="tips.html">Safety Guidelines</a></li>
+                </ul>
+            </div>
+     
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <ul class="social-links">
+                    <li><a href="https://facebook.com/YourTourismGuide" target="_blank"><img src="imgs/fb.png" class="socialmedia-logo">Travel Hub </a></li>
+                    <li><a href="https://instagram.com/YourTourismGuide" target="_blank"><img src="imgs/insta.webp" class="socialmedia-logo">Travel_Hub</a></li>
+                    <li><a href="https://twitter.com/YourTourismGuide" target="_blank"><img src="imgs/twiter.png" class="socialmedia-logo">Travel.Hub</a></li>
+                </ul>
+            </div>
+        </div>
+     
+        <div class="newsletter-signup">
+            <h3>Stay Updated</h3>
+            <p>Subscribe to our newsletter to receive the latest travel news and tips.</p>
+            <form id="newsletterForm">
+                <input type="email" id="newsletterEmail" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            <p id="newsletterMessage"></p>
+        </div>
 <!-- Footer Section -->
 <footer id="footer">
     <p>&copy; 2024 Travel Hub. All rights reserved.</p>
