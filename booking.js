@@ -15,9 +15,44 @@ $(document).ready(function () {
               destinationSelect.appendChild(option);
           });
 
+          $('#destination-city').on('change', function () {
+            let selectedCity = $(this).val();
+            let destination = data.destinations.find(dest => dest.city === selectedCity);
+
+            let departureDateInput = $('#departure-date');
+            let availableDatesContainer = $('#available-dates');
+            
+            availableDatesContainer.empty();
+
+            if (destination && destination.availableDates) {
+                availableDatesContainer.html('<strong>Available Departure Dates:</strong> ' + destination.availableDates.join(', '));
+            }
+        });
+
+        $('#departure-date').on('change', function () {
+            let selectedCity = $('#destination-city').val();
+            let selectedDepartureDate = $(this).val();
+            let destination = data.destinations.find(dest => dest.city === selectedCity);
+            let availableDatesContainer = $('#available-dates');
+            
+            // Clear any previous available dates
+            availableDatesContainer.empty();
+
+            if (destination && destination.availableDates) {
+                // If the selected departure date is not available
+                if (!destination.availableDates.includes(selectedDepartureDate)) {
+                    // Display an alert and the available dates
+                    alert('Selected departure date is not available. Here are the available dates: ' + destination.availableDates.join(', '));
+                    
+                    // Show the available dates below the date picker
+                    availableDatesContainer.html('<strong>Available Departure Dates:</strong> ' + destination.availableDates.join(', '));
+                }
+            }
+        });
+
           $(document).ready(function () {
             let destinations = data.destinations;
-            
+        
             $('#searchBtn').on('click', function () {
                 let departureCity = $('#departure-city').val();
                 let destinationCity = $('#destination-city').val();
@@ -38,7 +73,7 @@ $(document).ready(function () {
                 );
         
                 if (searchResults.length === 0) {
-                    $resultsContainer.html('<p>No results found for the selected area. Try another selecting another date</p>');
+                    $resultsContainer.html('<p>No results found for the selected criteria.</p>');
                     return;
                 }
         
@@ -65,86 +100,91 @@ $(document).ready(function () {
       });
 
       function handleBook(event, destinations) {
-        let destinationCity = $(event.target).data('destination');
+        let destinationCity = event.target.dataset.destination;
         let destination = destinations.find(dest => dest.city === destinationCity);
     
-        let $hotelsContainer = $('#hotelsContainer');
-        $hotelsContainer.empty().show();
+        let hotelsContainer = document.getElementById('hotelsContainer');
+        hotelsContainer.innerHTML = '';
+        hotelsContainer.style.display = 'block';
+        
     
         if (!destination.hotels || destination.hotels.length === 0) {
-            $hotelsContainer.html('<p>No hotels available for this destination. Proceed to book travel only.</p>');
+            hotelsContainer.innerHTML = '<p>No hotels available for this destination. Proceed to book travel only.</p>';
+
             showPersonalInfoForm(destination.city, null);
             return;
         }
     
         destination.hotels.forEach(hotel => {
-            let $hotelCard = $(`
-                <div class="hotel-card">
-                    <h3>${hotel.name}</h3>
-                    <p>Price Per Night: ${hotel.pricePerNight}</p>
-                    <button class="hotel-book-btn" data-hotel="${hotel.name}" data-destination="${destination.city}">Select Hotel</button>
-                </div>
-            `);
-            $hotelsContainer.append($hotelCard);
+            let hotelCard = document.createElement('div');
+            hotelCard.className = 'hotel-card';
+            hotelCard.innerHTML = `
+                <h3>${hotel.name}</h3>
+                <p>Price Per Night: ${hotel.pricePerNight}</p>
+                <button class="hotel-book-btn" data-hotel="${hotel.name}" data-destination="${destination.city}">Select Hotel</button>
+            `;
+            hotelsContainer.appendChild(hotelCard);
         });
     
-        $('.hotel-book-btn').on('click', function (e) {
-            let selectedHotel = $(e.target).data('hotel');
-            console.log('Selected Hotel:', selectedHotel);
-    
-            showPersonalInfoForm(destination.city, selectedHotel);
+        document.querySelectorAll('.hotel-book-btn').forEach(button => {
+            button.addEventListener('click', function (e) {
+              
+                let selectedHotel = e.target.dataset.hotel;
+                console.log('Selected Hotel:', selectedHotel); 
+
+                showPersonalInfoForm(destination.city, selectedHotel);
+            });
         });
     
-        let $skipButton = $('<button>', {
-            text: 'Skip Hotel Selection',
-            class: 'skip-btn',
-            click: function () {
-                showPersonalInfoForm(destination.city, null);
-            }
-        });
-    
-        $hotelsContainer.append($skipButton);
+        let skipButton = document.createElement('button');
+        skipButton.textContent = 'Skip Hotel Selection';
+        skipButton.className = 'skip-btn';
+        skipButton.addEventListener('click', () => showPersonalInfoForm(destination.city, null));
+        hotelsContainer.appendChild(skipButton);
     }
     
     function showPersonalInfoForm(destination, hotel) {
-        $('#hotelsContainer').hide();
-        let $personalInfoSection = $('#personalInfo');
-        $personalInfoSection.show();
-    
-        let $skipHotelMessage = $('#skipHotelMessage');
-        let $hotelSelectedMessage = $('#HotelselectedMessage');
+        document.getElementById('hotelsContainer').style.display = 'none';
+        let personalInfoSection = document.getElementById('personalInfo');
+        personalInfoSection.style.display = 'block';
+        
+        let skipHotelMessage = document.getElementById('skipHotelMessage');
+        let hotelSelectedMessage = document.getElementById('HotelselectedMessage');
     
         if (hotel) {
-            $hotelSelectedMessage.show().text(`You have selected the hotel "${hotel}". You may proceed with booking your travel.`);
-            $skipHotelMessage.hide();
+            hotelSelectedMessage.style.display = 'block';
+            skipHotelMessage.style.display = 'none';
+            hotelSelectedMessage.textContent = `You have selected the hotel "${hotel}". You may proceed with booking your travel.`;
         } else {
-            $skipHotelMessage.show();
-            $hotelSelectedMessage.hide();
+            skipHotelMessage.style.display = 'block';
+            hotelSelectedMessage.style.display = 'none';
         }
     
-        $('#personalInfoForm').on('submit', function (e) {
+        let personalInfoForm = document.getElementById('personalInfoForm');
+    
+       
+        personalInfoForm.onsubmit = function (e) {
             e.preventDefault();
     
-            let fullName = $('#full-name').val();
-            let phoneNumber = $('#phone-number').val();
-            let email = $('#email').val();
+            let fullName = document.getElementById('full-name').value;
+            let phoneNumber = document.getElementById('phone-number').value;
+            let email = document.getElementById('email').value;
     
-            let $confirmationSection = $('#confirmation');
-            let $confirmationMessage = $('#confirmationMessage');
+            let confirmationSection = document.getElementById('confirmation');
+            let confirmationMessage = document.getElementById('confirmationMessage');
     
-            $confirmationMessage.html(hotel
+            confirmationMessage.innerHTML = hotel
                 ? `Booking successful! Thank you, <strong>${fullName}</strong>. The airlines will contact you at <strong>${phoneNumber}</strong> or via email at <strong>${email}</strong> to confirm your booking for travel to <strong>${destination}</strong> and your reservation at <strong>${hotel}</strong>.`
-                : `Booking successful! Thank you, <strong>${fullName}</strong>. The airlines will contact you at <strong>${phoneNumber}</strong> or via email at <strong>${email}</strong> to confirm your booking for travel to <strong>${destination}</strong>.`);
+                : `Booking successful! Thank you, <strong>${fullName}</strong>. The airlines will contact you at <strong>${phoneNumber}</strong> or via email at <strong>${email}</strong> to confirm your booking for travel to <strong>${destination}</strong>.`;
     
-            $personalInfoSection.hide();
-            $confirmationSection.show();
+            personalInfoSection.style.display = 'none';
+            confirmationSection.style.display = 'block';
     
-            $('html, body').animate({ scrollTop: $confirmationSection.offset().top }, 'smooth');
-        });
+            window.scrollTo({ top: confirmationSection.offsetTop, behavior: 'smooth' });
+        };
     }
     
-    },
-);
+});
 function toggleMenu() {
     let navbar = document.querySelector(".navbar");
     let hamburger = document.querySelector(".hamburger");

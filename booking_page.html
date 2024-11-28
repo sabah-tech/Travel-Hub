@@ -46,9 +46,15 @@
 
         <label for="departure-date">Departure Date</label>
         <input type="date" id="departure-date" min="today"required >
+        <div id="available-dates"></div>
+
 
         <label for="return-date">Return Date</label>
         <input type="date" id="return-date" required>
+
+        <label for="person-count">Number of Persons</label>
+        <input type="number" id="person-count" value="1" min="1" required>
+        
       </fieldset>
       <div class="form-actions">
         <button type="button" id="searchBtn">Search</button>
