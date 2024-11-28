@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="destinations-styles.css">
+</head>
+<body>
+    <!-- Sticky Navbar -->
+    <header class="sticky-header">
+        <div class="navbar-container">
+            <a href="homepage.html" class="logo">
+                <img src="imgs/website-logo.PNG" alt="Website Logo">
+            </a>
+            <button class="hamburger" aria-label="Toggle Menu" onclick="toggleMenu()">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+            <ul class="navbar">
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="#">Destinations</a></li>
+                <li><a href="#">Travel Guide</a></li>
+                <li><a href="accommodation.html">Accommodation</a></li>
+                <li><a href="#">Activities</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+   
+    <main>
+        <!-- Filters Section -->
+         <section id="filters">
+            <h2>find your destination</h2>
+            <div class="filter-container">
+
+        <form id="filter-form">
+            <label class="filter-label">
+                <span>
+                    travel-type:
+                </span>
+            <input type="text" id="search" placeholder="Search Destinations">
+            <select id="travel-type">
+                <option value="">All Types</option>
+                <option value="luxury">Luxury</option>
+                <option value="adventure">Adventure</option>
+                <option value="budget">Budget</option>
+            </select>
+        </label>
+            <select id="region">
+                <label class="filter-label">
+                    <span>
+                        region:
+                    </span>
+                <option value="">All Regions</option>
+                <option value="europe">Europe</option>
+                <option value="asia">Asia</option>
+                <option value="south-america">South America</option>
+                <option value="australia">Australia</option>
+            </select>
+        </label>
+     
+        </form>
+    </div>
+    </section>
+    <div class="txt">Top Picks:</div>
+
+        <div id="destination-grid"></div>
+        
+        
+     <section id="destinations">
+       
+        <div id="destination-grid">
+        
+        </div>
+    </section>
+    
+        <section id="destination-grid">
+        
+        </section>
+      
+        <div id="book-now">
+            <a href="book.html">
+                <button class="book-btn">Book Hotel Now</button>
+              </a>
+        </div>
+        
+      
+    </main>
+<!-- Footer Section -->
+<footer id="footer">
+    <p>&copy; 2024 Travel Hub. All rights reserved.</p>
+</footer>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="destinations.js"></script>
+</body>
+</html>

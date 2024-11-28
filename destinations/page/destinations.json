@@ -1,0 +1,107 @@
+{
+    "destinations": [
+      {
+        "name": "Paris",
+        "region": "europe",
+        "type": "luxury",
+        "image": "destinations-imgs/paris.jpg",
+        "link": "homepage.html",
+        "hotels": [
+          {
+            "name": "Hotel Eiffel",
+            "price": "$200/night"
+          },
+          {
+            "name": "Le Meridien",
+            "price": "$250/night"
+          }
+        ]
+      },
+      {
+        "name": "Tokyo",
+        "region": "asia",
+        "type": "adventure",
+        "image": "destinations-imgs/tokyo.jpg",
+        "link": "homepage.html",
+        "hotels": [
+          {
+            "name": "Shibuya Hotel",
+            "price": "$150/night"
+          },
+          {
+            "name": "Tokyo Tower Inn",
+            "price": "$180/night"
+          }
+        ]
+      },
+      {
+        "name": "Rio",
+        "region": "south-america",
+        "type": "budget",
+        "image": "destinations-imgs/rio.jpg",
+        "link": "homepage.html",
+        "hotels": [
+          {
+            "name": "Copacabana Beach Hotel",
+            "price": "$100/night"
+          },
+          {
+            "name": "Hotel Rio Palace",
+            "price": "$120/night"
+          }
+        ]
+      },
+      {
+        "name": "Venice",
+        "region": "europe",
+        "type": "luxury",
+        "image": "destinations-imgs/venice.jpg",
+        "link": "homepage.html",
+        "hotels": [
+          {
+            "name": "Hotel Danieli",
+            "price": "$300/night"
+          },
+          {
+            "name": "Palazzo Venier",
+            "price": "$350/night"
+          }
+        ]
+      },
+      {
+        "name": "Bangkok",
+        "region": "asia",
+        "type": "budget",
+        "image": "destinations-imgs/bangkok.jpg",
+        "link": "homepage.html",
+        "hotels": [
+          {
+            "name": "Khao San Road Inn",
+            "price": "$50/night"
+          },
+          {
+            "name": "Bangkok City Hotel",
+            "price": "$70/night"
+          }
+        ]
+      },
+      {
+        "name": "Sydney",
+        "region": "australia",
+        "type": "adventure",
+        "image": "destinations-imgs/sydney.jpg",
+        "link": "homepage.html",
+        "hotels": [
+          {
+            "name": "Sydney Harbour Hotel",
+            "price": "$220/night"
+          },
+          {
+            "name": "Bondi Beach Resort",
+            "price": "$180/night"
+          }
+        ]
+      }
+    ]
+  }
+  
