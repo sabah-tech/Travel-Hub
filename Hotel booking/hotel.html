@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crowny Hotel</title>
+    <link rel="stylesheet" href="hotel.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+      integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://code.jquery.com/jquery-1.12.4.min.js"
+      integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header class="sticky-header">
+      <div class="navbar-container">
+        <a href="homepage.html" class="logo">
+          <img src="images/website logo.jpg" alt="Website Logo" />
+        </a>
+        <button
+          class="hamburger"
+          aria-label="Toggle Menu"
+          onclick="toggleMenu()"
+        >
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </button>
+        <ul class="navbar">
+          <li><a href="homepage.html">Home</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="destinations.html">Destinations</a></li>
+          <li><a href="tips.html">Travel Guide</a></li>
+          <li><a href="accommodation.html">Accommodation</a></li>
+          <li><a href="booking_page.html">Book Now</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <script>
+      var menulist = document.getElementById("menulist");
+      menulist.style.maxHeight = "0px";
+
+      function menutoggle() {
+        if (menulist.style.maxHeight == "0px") {
+          menulist.style.maxHeight = "100vh";
+        } else {
+          menulist.style.maxHeight = "0px";
+        }
+      }
+    </script>
+
+    <section class="home">
+      <div class="content">
+        <img
+          src="Images/pexels-pixabay-258154.jpg"
+          alt="Hotel Banner"
+          class="static-image"
+        />
+        <div class="text">
+          <h1>Spend Your Holiday</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius,
+            repellendus.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking-form">
+      <div class="card">
+        <h1>Check Hotel Availability</h1>
+        <form id="hotelBookingForm" class="form-grid">
+          <div class="input-group">
+            <label for="city">City:</label>
+            <select id="city" required>
+              <option value="">Select a City</option>
+              <option value="paris">Paris</option>
+              <option value="tokyo">Tokyo</option>
+              <option value="rio">Rio</option>
+              <option value="venice">Venice</option>
+              <option value="bangkok">Bangkok</option>
+              <option value="sydney">Sydney</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label for="hotel">Hotel:</label>
+            <select id="hotel" required>
+              <option value="">Select a Hotel</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label for="arrivalDate">Arrival Date:</label>
+            <input type="date" id="arrivalDate" required />
+          </div>
+          <div class="input-group">
+            <label for="leaveDate">Leave Date:</label>
+            <input type="date" id="leaveDate" required />
+          </div>
+
+          <div class="button-container">
+            <button type="button" id="checkAvailability" class="btn">
+              Check Availability
+            </button>
+          </div>
+        </form>
+
+        <div
+          id="availabilityStatus"
+          style="display: none; margin-top: 20px"
+        ></div>
+      </div>
+
+      <div id="proceedModal" class="overlay" style="display: none">
+        <div class="modal-box">
+          <h2>Proceed with Booking</h2>
+          <form id="proceedForm">
+            <div class="input-group">
+              <label for="roomType">Room Type:</label>
+              <select id="roomType" required>
+                <option value="single">Single Room</option>
+                <option value="double">Double Room</option>
+                <option value="suite">Suite</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label for="adults">Adults:</label>
+              <input type="number" id="adults" min="1" value="1" required />
+            </div>
+            <div class="input-group">
+              <label for="children">Children:</label>
+              <input type="number" id="children" min="0" value="0" required />
+            </div>
+            <button type="submit" class="btn">Confirm Booking</button>
+          </form>
+          <button id="closeProceedModal" class="btn btn-secondary">
+            Cancel
+          </button>
+        </div>
+      </div>
+
+      <div id="summaryModal" class="overlay" style="display: none">
+        <div class="modal-box">
+          <h2>Booking Summary</h2>
+          <table id="summaryTable"></table>
+          <button id="closeSummaryModal" class="btn">Close</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="about top">
+      <div class="container flex">
+        <div class="left">
+          <div class="heading">
+            <h2>Hotel</h2>
+          </div>
+          <p>
+            Welcome to our hotel, where luxury meets comfort! Nestled in a
+            serene location, we offer a perfect blend of modern amenities and
+            timeless elegance, ensuring an unforgettable experience for every
+            guest. Whether you are here for business or leisure, our dedicated
+            team is committed to making your stay exceptional. From beautifully
+            designed rooms to world-class dining and recreational facilities,
+            every detail has been carefully curated to provide you with the
+            highest level of comfort. Your satisfaction is our priority, and we
+            look forward to welcoming you to your home away from home..
+          </p>
+          <button class="primary-btn">ABOUT US</button>
+        </div>
+        <div class="right">
+          <img src="images/hotel-7885138_1280.webp" alt="About Crowny Hotel" />
+        </div>
+      </div>
+    </section>
+
+    <section class="counter top">
+      <div class="container grid">
+        <div class="box">
+          <h1 data-target="1700">0</h1>
+          <hr />
+          <span>Happy Customer</span>
+        </div>
+        <div class="box">
+          <h1 data-target="25">0</h1>
+          <hr />
+          <span>years Of Experience</span>
+        </div>
+        <div class="box">
+          <h1 data-target="150">0</h1>
+          <hr />
+          <span>Hotels</span>
+        </div>
+        <div class="box">
+          <h1 data-target="25">0</h1>
+          <hr />
+          <span>Available in Countries</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <div class="container">
+        <div class="heading">
+          <h1>Gallery</h1>
+          <h2>Our Images</h2>
+          <p>Explore the beautiful moments captured at our venue.</p>
+        </div>
+        <div class="grid">
+          <div class="box">
+            <img src="Images/img1.jpg" alt="Gallery Image 1" />
+          </div>
+          <div class="box">
+            <img src="images/img2.jpg" alt="Gallery Image 2" />
+          </div>
+          <div class="box">
+            <img src="images/img3.jpg" alt="Gallery Image 3" />
+          </div>
+          <div class="box">
+            <img src="images/img4.webp" alt="Gallery Image 4" />
+          </div>
+          <div class="box">
+            <img src="images/img5.jpg" alt="Gallery Image 5" />
+          </div>
+          <div class="box">
+            <img src="images/img6.jpg" alt="Gallery Image 6" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services">
+      <div class="container">
+        <div class="heading">
+          <h1>Services</h1>
+          <h2>What We Offer</h2>
+          <p>Discover our premium services tailored for your satisfaction.</p>
+        </div>
+        <div class="grid">
+          <div class="box">
+            <i class="fa-solid fa-utensils"></i>
+            <h3>In-House Restaurant</h3>
+            <p>Enjoy delicious meals prepared by our top chefs.</p>
+          </div>
+          <div class="box">
+            <i class="fa-solid fa-spa"></i>
+            <h3>Luxury Spa</h3>
+            <p>Relax and rejuvenate with our spa treatments.</p>
+          </div>
+          <div class="box">
+            <i class="fa-solid fa-person-biking"></i>
+            <h3>Fitness Center</h3>
+            <p>Stay fit during your stay with our state-of-the-art gym.</p>
+          </div>
+          <div class="box">
+            <i class="fa-solid fa-champagne-glasses"></i>
+            <h3>Event Hosting</h3>
+            <p>Perfect venues for weddings, conferences, and parties.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div class="container">
+        <h1>Subscribe to Our Newsletter</h1>
+        <p>
+          Stay updated with our latest offers, news, and events. Subscribe now!
+        </p>
+        <form class="form">
+          <input type="email" placeholder="Enter your email address" required />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <footer id="footer">
+      <p>&copy; 2024 Travel Hub. All rights reserved.</p>
+    </footer>
+
+    <script
+      src="https://kit.fontawesome.com/032d11eac3.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="hotel.js"></script>
+  </body>
+</html>
