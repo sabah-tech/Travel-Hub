@@ -35,16 +35,12 @@ $(document).ready(function () {
             let destination = data.destinations.find(dest => dest.city === selectedCity);
             let availableDatesContainer = $('#available-dates');
             
-            // Clear any previous available dates
             availableDatesContainer.empty();
 
             if (destination && destination.availableDates) {
-                // If the selected departure date is not available
                 if (!destination.availableDates.includes(selectedDepartureDate)) {
-                    // Display an alert and the available dates
                     alert('Selected departure date is not available. Here are the available dates: ' + destination.availableDates.join(', '));
                     
-                    // Show the available dates below the date picker
                     availableDatesContainer.html('<strong>Available Departure Dates:</strong> ' + destination.availableDates.join(', '));
                 }
             }
