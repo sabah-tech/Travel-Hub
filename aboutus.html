@@ -127,6 +127,58 @@
     <p>Address: 123 Travel Street, Wanderlust City, World</p>
   </section>
 </body>
+  <!-- Footer Section -->
+  <footer class="footer-section">
+    <div class="footer-nav">
+        <div class="footer-column">
+            <h3>About Us</h3>
+            <ul>
+                <li><a href="aboutus.html">Our Story</a></li>
+                <li><a href="aboutus.html">Meet the Team</a></li>
+                <li><a href="aboutus.html">Our Vision</a></li>
+                <li><a href="aboutus.html">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Destinations</h3>
+            <ul>
+                <li><a href="/destinations/destinations.html">Europe</a></li>
+                <li><a href="/destinations/destinations.html">Asia</a></li>
+                <li><a href="/destinations/destinations.html">America</a></li>
+                <li><a href="/destinations/destinations.html">Oceania</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Resources</h3>
+            <ul>
+                <li><a href="/new tips/tips.html">Travel Tips</a></li>
+                <li><a href="/new tips/tips.html">Visa Information</a></li>
+                <li><a href="/new tips/tips.html">Packing Lists</a></li>
+                <li><a href="/new tips/tips.html">Safety Guidelines</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Follow Us</h3>
+            <ul class="social-links">
+                <li><a href="https://facebook.com/YourTourismGuide" target="_blank"><img src="imgs/fb.png" class="socialmedia-logo">Travel Hub </a></li>
+                <li><a href="https://instagram.com/YourTourismGuide" target="_blank"><img src="imgs/insta.webp" class="socialmedia-logo">Travel_Hub</a></li>
+                <li><a href="https://twitter.com/YourTourismGuide" target="_blank"><img src="imgs/twiter.png" class="socialmedia-logo">Travel.Hub</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="newsletter-signup">
+        <h3>Stay Updated</h3>
+        <p>Subscribe to our newsletter to receive the latest travel news and tips.</p>
+        <form id="newsletterForm">
+            <input type="email" id="newsletterEmail" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+        <p id="newsletterMessage"></p>
+    </div>
 <footer id="footer">
   <p>&copy; 2024 Travel Hub. All rights reserved.</p>
 </footer>
@@ -137,5 +189,22 @@ function toggleMenu() {
   navbar.classList.toggle("open");
   hamburger.classList.toggle("active");
 }
+$(document).ready(function () {
+    $("#newsletterForm").on("submit", function (event) {
+      event.preventDefault();
+  
+      let email = $("#newsletterEmail").val();
+      let $message = $("#newsletterMessage");
+  
+      if (email) {
+        $message.text("Thank you for subscribing!")
+                .css("color", "green"); 
+        $("#newsletterEmail").val(''); 
+      } else {
+        $message.text("Please enter a valid email address. It should consist of @")
+                .css("color", "red");
+      }
+    });})
+
 </script>
 </html>
