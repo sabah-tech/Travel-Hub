@@ -301,3 +301,164 @@ button:hover {
   background-color: #0056b3;
 }
 
+/* Footer */
+#footer {
+  background-color: #3494e8;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  font-size: 14px;
+}
+
+#footer p {
+  margin: 0;
+}
+/* Footer Styling */
+.footer-section {
+  background-color: #3494e8;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-section h3 {
+  color: #f5f9fa;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.footer-column {
+  width: 200px;
+  text-align: left;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column li {
+  margin-bottom: 5px;
+}
+
+.footer-column a {
+  color: #ddd;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-column a:hover {
+  color:#ff6347;
+}
+.socialmedia-logo {
+width: 30px;
+height: auto;
+margin-right: 8px;
+transition: transform 0.3s ease;}
+
+.newsletter-signup {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.newsletter-signup form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.newsletter-signup input[type="email"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 250px;
+  border: none;
+  border-radius: 5px;
+}
+
+.newsletter-signup button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #72bed9;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.newsletter-signup button:hover {
+  background-color: #ff6347;
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  font-size: 0.9rem;
+}
+
+.footer-bottom a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  color:#72bed9;
+}
+#successMessage {
+  font-size: 1rem;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #2ecc71;  
+  display: none;  
+}
+
+/* Responsive Footer Styling */
+@media (max-width: 768px) {
+.footer-container {
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  text-align: center;
+}
+
+.footer-section {
+  width: 100%;
+}
+
+.newsletter-form {
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.newsletter-form input {
+  width: 90%;
+}
+
+.newsletter-form button {
+  width: 50%;
+}
+
+.social-icons {
+  justify-content: center;
+}
+}
+
+@media (max-width: 480px) {
+.newsletter-form button {
+  width: 70%;
+}
+
+.footer-bottom p {
+  font-size: 0.8rem;
+}
+}
