@@ -7,32 +7,31 @@
   box-sizing: border-box;
 }
 header {
-    position: sticky;
-    top: 0;
-    background: #3494e8;
-    z-index: 1000;
-
-  
+  position: sticky;
+  top: 0;
+  background: #3494e8;
+  z-index: 1000;
 }
 .txt{
-    color: white;
-    margin-left: 230px;
-    font-size: 40px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
+  color: white;
+  margin-left: 230px;
+  font-size: 40px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
 }
 .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
 }
 
 .logo img {
-    height: 90px;
-    width: auto;
+  height: 90px;
+  width: auto;
 }
 
+/* Navbar */
 .navbar {
   display: flex;
   list-style: none;
@@ -197,7 +196,6 @@ body {
     font-weight: bold;
     color: #333;
     margin-bottom: 20px;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .Bangkok-intro-text {

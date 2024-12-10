@@ -70,9 +70,7 @@ header {
 .txt{
   color: white;
   margin-left: 230px;
-  font-size: 40px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  
+  font-size: 40px;  
 }
 .navbar-container {
   display: flex;
