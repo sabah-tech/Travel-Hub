@@ -78,8 +78,8 @@ $(document).ready(function () {
   
       if (email) {
         $message.text("Thank you for subscribing!")
-                .css("color", "green"); 
-        $("#newsletterEmail").val(''); 
+                .css("color", "green");
+        $("#newsletterEmail").val('');
       } else {
         $message.text("Please enter a valid email address. It should consist of @")
                 .css("color", "red");
