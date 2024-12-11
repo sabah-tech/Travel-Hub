@@ -126,6 +126,10 @@ header {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 #filters h2 {
@@ -146,6 +150,8 @@ header {
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+    width: 100%;
+    max-width: 600px;
 }
 .ilter-fort{
     display: flex;
@@ -156,11 +162,19 @@ header {
     gap: 20px;
 }
 #travel-type{
-    margin-left: 20px;
+    width: 100%;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
 }
 .filter-label {
     display: flex;
+    flex-direction: row;
     align-items: center;
+    width: 100%;
+    
 }
 
 .filter-label span {
