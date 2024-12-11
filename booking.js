@@ -34,17 +34,22 @@ $(document).ready(function () {
             let selectedDepartureDate = $(this).val();
             let destination = data.destinations.find(dest => dest.city === selectedCity);
             let availableDatesContainer = $('#available-dates');
+            let errorMessage = $('#error-message');
             
             availableDatesContainer.empty();
 
             if (destination && destination.availableDates) {
+                availableDatesContainer.html('<strong>Available Departure Dates:</strong> ' + destination.availableDates.join(', '));
                 if (!destination.availableDates.includes(selectedDepartureDate)) {
-                    alert('Selected departure date is not available. Here are the available dates: ' + destination.availableDates.join(', '));
-                    
-                    availableDatesContainer.html('<strong>Available Departure Dates:</strong> ' + destination.availableDates.join(', '));
+                    errorMessage.text('Selected Departure Date is not available.');
+                    errorMessage.css({ color: 'red', marginTop: '5px' });
+                    availableDatesContainer.after(errorMsg);
+                } else{
+                    errorMessage.text('');
                 }
             }
-        });
+            },
+        );
 
           $(document).ready(function () {
             let destinations = data.destinations;

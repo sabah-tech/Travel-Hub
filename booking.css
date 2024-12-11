@@ -168,6 +168,7 @@ form select {
   justify-content: space-between;
 }
 
+
 button {
   padding: 10px 15px;
   background: #007BFF;
@@ -182,9 +183,12 @@ button:hover {
 }
 
 /* Search Results */
-.search-results {
+.search-results, .hotel-listings {
   max-width: 800px;
   margin: 20px auto;
+  background-color: rgba(255, 255, 255, 0.8); /* Light background with transparency */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
 }
 
 #resultsContainer {
@@ -192,10 +196,7 @@ button:hover {
   flex-wrap: wrap;
   gap: 15px;
 }
-.hotel-listings{
-  margin: 20px auto;
-  max-width: 800px;
-}
+
 #hotelsContainer{
   display: flex;
   flex-wrap: wrap;
